@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ .cell {
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+ }
+
+ .row {
+    display: flex;
+ }
+</style>
+</head>
+<body>
+
+<div id="table"></div>
+
+<script>
+ function createTable(rows, cols) {
+    let table = document.getElementById('table');
+
+    for (let i = 0; i < rows; i++) {
+      let row = document.createElement('div');
+      row.classList.add('row');
+
+      for (let j = 0; j < cols; j++) {
+        let cell = document.createElement('input');
+        cell.classList.add('cell');
+        cell.setAttribute('type', 'text');
+        row.appendChild(cell);
+      }
+
+      table.appendChild(row);
+    }
+ }
+
+ createTable(29, 6);
+</script>
+
+</body>
+</html>
